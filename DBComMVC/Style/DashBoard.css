@@ -1,0 +1,178 @@
+﻿/* Charts PIE Resultado */
+#chartPieDiv { width : 100%; height : 100px; }
+
+body { 
+    padding-top: 40px; /* 60px to make the container go all the way to the bottom of the topbar */ 
+    background-color:#eaeaea;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    color: #333333;    
+    
+
+}
+
+.footer{    bottom: 0; width: 100%; height: 60px; background-color: #f5f5f5; }
+.bg-yellow{background-color: #f39c12 !important;}
+
+.sup27{ margin-top:27px !important; }
+.sup50{ margin-top:35px !important; }
+.sup0{ margin-top:0px !important;}
+.tam95{height:95px;}
+.tam87{height:87px;}
+.tam130{height:130px;}
+.tam130X315{height:130px; width:315px;}
+.margin25{margin-left:0px;}
+.padding25{padding-left:25px; font-size:28px !important; line-height:26px;}
+.padding17{padding-right:17px;}
+.marginLeft3{margin-left:3px;}
+.marginLeft20{margin-left:20px;}
+.tamPrincipalBox{width:415px; height:165px;}
+.tamPrincipalH3{font-size:42px !important; font-weight:600 !important; padding-left:8px !important;}
+.tamPrincipalP{font-size:16px; margin-left:21px;}
+.tamPrincipalHR{margin-bottom:8px !important;}
+.font14{font-size:14px; margin-top:10px;}
+.font50{font-size:50px !important;}
+.resultH5{ position:absolute; bottom:0px; right:17px;  font-size:17px; font-weight:400; }
+
+
+.small-box_clean{
+    border: solid 0px #e1e1e1 !important;
+    border-bottom: 0px solid #3396b6 !important;
+	border-radius:0px !important;
+	box-shadow:0px 0px 0px 0px rgba(0,0,0,0.05) !important;
+    background-color: transparent !important;
+    border-right:1px solid rgba(0,0,0,0.15) !important;
+}
+.small-box {
+    border: solid 1px #e1e1e1;
+    border-bottom: 5px solid #3396b6;
+	border-radius:10px;
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+    margin-top:20px;
+    box-shadow:2px 5px 14px 10px rgba(0,0,0,0.05);
+    background-color: #fff;
+}
+.sbLeft {
+	border-radius:10px 0px 0px 10px !important;
+    border-right: 0px !important;
+}
+
+.spRight{
+    border-radius:0px 10px 10px 0px !important;
+    border-left: 0px !important;
+}
+.small-box>.inner {
+	padding:20px;
+    padding-bottom:0px;
+}
+
+.small-box> hr{
+    margin-bottom:0px !important;
+    margin-left:5%;
+    width:90%;
+
+} 
+
+.small-box> .small-box-footer-custom{
+    text-align:center;
+    padding-bottom:2px;
+    font-weight:400;
+    color:#7A7A7A;
+    font-size:12px;
+    color:#dccb00;
+}
+.small-box> .colorGreen{
+    color:#7A7A7A;
+}
+.small-box>.small-box-footer {
+	position:relative;
+	text-align:center;
+	padding:2px 0;
+	color:#fff;
+	color:rgba(255,255,255,0.8);
+	display:block;
+	z-index:10;
+	background:rgba(0,0,0,0.1);
+	text-decoration:none;
+    height:0px;
+}
+
+.small-box h3 {
+	font-size:38px;
+	font-weight:bold;
+	margin:0 0 10px 0;
+	white-space:nowrap;
+	padding:0;
+    font-weight:400
+}
+.small-box p {
+	font-size:14px;
+    font-weight:500;
+    color:#929292;
+}
+.small-box p>small {
+	display:block;
+	color:#f9f9f9;
+	font-size:13px;
+	margin-top:5px
+}
+.small-box h3,.small-box p {
+	z-index:5px;
+}
+.small-box .icon {
+	-webkit-transition:all .3s linear;
+	-o-transition:all .3s linear;
+	transition:all .3s linear;
+	position:absolute;
+	top:5px;
+	right:10px;
+	z-index:0;
+	font-size:90px;
+	color:rgba(0,0,0,0.15)
+}
+.divisor{ 
+    background-color:#3396b6; 
+    height:53px; 
+    width:20%; 
+    border-bottom:solid 2px rgba(29, 29, 29, 0.19);
+}
+.chartBars{
+    background-color:#e1e1e1; 
+    height:53px; 
+    width:80%; 
+    border-bottom:solid 2px rgba(29, 29, 29, 0.19);
+}
+.ionBarsCharts{
+    color:#898989; 
+    font-size:45px; 
+    padding:4px 0px 0px 19px
+}
+.backgrounTitle{
+    background-color:#e1e1e1; 
+    margin-left:0px; 
+    border-bottom:solid 2px rgba(29, 29, 29, 0.19);
+}
+.backgrounTitle div{height:28px; width:100%;}
+.backgrounTitle div div
+{
+    font-weight:400; 
+    color:#7A7A7A; 
+    font-size:18px; 
+    color:#6c6c6c; 
+    padding:3px 0px 0px 16px
+}
+.gerenteCanais{
+    background-color:red;
+    margin-left:0px;     
+    background-color:#e1e1e1; 
+    margin-left:0px; 
+    border-bottom:solid 2px rgba(29, 29, 29, 0.19);
+    height:63px;
+}
+

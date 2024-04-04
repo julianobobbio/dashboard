@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="Cache-Control" content="no-cache, no-store" />
+	<meta http-equiv="Pragma" content="no-cache, no-store" />
+	<meta http-equiv="expires" content="Mon, 06 Jan 1990 00:00:01 GMT" />
+	
+    <title>DASHBOARD WORLD WINE</title>
+
+    <!-- scripts gerais -->
+    <script src="JavaScript/Jquery-1.9.1.min.js"></script>    
+    <script src="JavaScript/highcharts.js"></script>    
+    <script src="JavaScript/common.js"></script>
+    <script src="JavaScript/jsDashWW_dev.js"></script>
+
+    <!-- scripts AMCHARTS -->
+    <script src="JavaScript/charts/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    
+    <!-- Ionicons 2.0.0 -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" type="text/css" /> 
+    
+    <!-- FontAwesome 2.0.1 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- BOOTSTRAP 3.3.1 -->    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-3.3.1.css" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Style/DashBoard.css" /> 
+
+    <style>
+        .table{
+            border-bottom:1px solid #e6e6e6
+        }
+        .table thead tr th{ 
+            color:#333 !important;
+            background-color: rgba(51, 51, 51, 0.05);
+            border-bottom:0px !important; 
+            font-weight:400; 
+            font-size:14px !important;
+            padding: 5px 0px 5px 30px !important;
+        }
+        .table thead tr {
+            border-bottom: 1px #e6e6e6 solid !important;
+            border-top: 1px #e6e6e6 solid !important;
+        }
+        .table tbody tr td {
+            padding: 10px 0px 10px 30px !important;
+        }
+    </style>
+
+<!--		
+	<script type="text/javascript">
+		if (window.location.protocol != "https:") {
+           window.location.protocol = "https";
+        }
+	</script>
+-->
+</head>
+<body>
+
+    <!-- Begin > Cabeçalho (Finalizado) -->
+    <div class="navbar navbar-inverse navbar-fixed-top" style="display:block; z-index:5001">
+        <div class="navbar-inner">
+            <div class="container-fluid" style="padding-left:0px !Important">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" style="background-color:#4e4e4e; color:#ffffff; font-size:20px;" href="#">DashBoard Comercial - WORLD WINE</a>
+					<div style="width: 100%; line-height: 22px; color:#f5f5f5; font-size:20px; margin-left:-18%; padding-top: 5px; text-align: center;" id="txt">&#160;</div>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right" style="display:none;">
+                            <a href="#" class="navbar-link" style="text-decoration:none;">
+                                Entrar
+                                <i class="fa fa-user-secret fa-lg"></i>
+                            </a>
+                        </p>
+                        <ul class="nav" style="display:none;">
+                            <li class="dropdown active">
+                                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Resultado Vendas <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vendas Vs. Canal</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vendas Vs. Equipes </a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vendas Vs. Gerentes</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vendas Vs. Vendedor</a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Consolidado Geral</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="DashLPMap.html">Map</a></li>
+                            <li><a href="#contact">Metas</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- End > Cabeçalho -->
+
+    <!-- Begin > Resultados Geral (Finalizado) -->
+    <div class="container">
+            <!-- Begin > Boxes -->
+            <!-- Small boxes (Stat box) -->
+        <div id="resultadosGerais" class="row" style="margin-top:10px;">
+            <!-- Begin > A Faturar -->
+            <div class="col-XS-12 col-sm-6 col-lg-4" style="padding:0px !important">
+                <!-- small box -->
+                <div class="small-box sbLeft sup27 tam130">
+                    <div class="inner">
+                        <p class="margin25">A FATURAR</p>
+                        <h3 class="padding25" id="aFaturar">R$ 0,00</h3>
+                    </div>
+                    <div class="icon padding17">
+                        <i class="ion ion-ios-alarm"></i>
+                    </div>
+                    <hr />
+                    <div class="small-box-footer-custom colorGreen">VALORES EM ABERTO</div>
+                </div>
+            </div>
+            <!-- End > A Faturar -->
+            <!-- Begin > Vendas Mês -->
+            <div class="col-XS-12 col-sm-6 col-lg-4" style="padding:0px; margin-left:-15px">
+                <!-- small box -->
+                <div class="small-box tamPrincipalBox" style="z-index:5000; background-color:#fff;margin-top:13px;">
+                    <div class="inner">
+                        <p class="tamPrincipalP" style="font-size:17px; margin-left:10px !important;">R$ VENDAS MÊS</p>
+                        <h3 class="tamPrincipalH3" id="vendaMes">R$ 0,00</h3>
+                    </div>
+                    <div class="icon" style="padding-right:2px;">
+                        <i class="ion ion-social-usd" style="font-size:96px;"></i>
+                    </div>
+                    <hr class="tamPrincipalHR" />
+                    <div class="small-box-footer-custom font14" style="font-size:15px; color:#7A7A7A">
+                        <span id="spanValMetaTT" style="float:left; padding-left:23px; font-size:19px;">
+                            <span class="badge" style="padding:4px 5px !important; border-radius:7px !important; background-color:#d9534f;">M</span>  
+                            <span style="font-size:17px;" id="valMetaTT">R$ 0,00</span>
+                        </span>
+                        <span style="float:right; padding-right:23px; font-size:20px; font-weight:600; color:#2d9e05;"><span id="percResultaVsMetaTT">0%</span><i class="ion  ion-arrow-up-b"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End > Vendas Mês -->
+            <!-- Begin > Consolidado Dia -->
+            <div class="col-XS-12 col-sm-6 col-lg-4" style="float:right; padding:0px;">
+                <!-- small box -->
+                <div class=" small-box spRight sup27 tam130">
+                    <div class="inner">
+                        <p class="margin25">CONSOLIDADO DIA</p>
+                        <h3 class="padding25" id="consolidadoDia">R$ 0,00</h3>
+                    </div>
+                    <div class="icon padding17">
+                        <i class="ion-arrow-graph-up-right icon text-success"></i>
+                    </div>
+                    <hr />
+                    <div class="small-box-footer-custom colorGreen">FATURAMENTO REALIZADO NO DIA</div>
+                </div>
+            </div>
+            <!-- End > Consolidado Dia -->
+        </div>
+            <!-- End > Boxes -->
+    </div>
+    <!-- End > Resultados Geral -->
+
+    <!-- Begin > Cabeçalho ("Evolução principal indicadores de vendas") -->
+    <div class="container"  style="margin-bottom:10px; display:block; padding-left:0px; padding-right:0px;">
+        <!-- Begin > Dados Gerente -->
+        <div class="row" style="margin-left:0px; background-color:#FFF; padding:5px 5px; margin:0px 0px; border-bottom:1px solid #f3f3f3;">
+            <!-- Begin > Dados Gerente -->
+            <div class="col-lg-9" style="padding:5px;">
+                <div class="media">
+                    <div class="media-left media-bottom">
+                        <div id="IconeGerente" style="width: 50px; height: 50px; background-color: #68217a; text-align: center; padding: 13px 0px; font-size: 25px; font-weight: 400; color: white; display:inline-block;">
+                            G<!--<img id="imgGerente" alt="Marcos Oliveira" src="Style/Vendores/VendedorPadrao.png" style="width:50px; height:50px;">-->
+                        </div>
+                        <div class="media-body" style="display:inline-block; padding-left:5px; width:790px;">
+                            <h4 id="nmGerente" class="media-heading" style="font-weight:400; font-size:20px;">Gerente Padrão</h4>
+                            <p id="canalGerente" style="font-size:12px; font-weight:400; color:#8899A6; margin:0px;">CANAL PADRÃO</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <!-- End > Dados Genente -->
+
+            <!-- Begin > Dada Consulta -->
+            <div class="col-lg-3" style="padding:10px 15px 0px 0px;">
+                <div style="font-size:40px;">
+                    <i class="ion ion-android-calendar" style="float:right; color:rgba(0,0,0,0.15)"></i>
+                    <h4 id="periodoConsulta" style="display:none; float:right; font-weight:400; font-size:20px; padding-right:7px;"></h4>                
+                </div>
+            </div>
+            <!-- End > Data Consulta -->
+        </div>
+        <!-- Ende > Dados Gerente -->
+
+        <!-- Begin > Resultado Parcial -->
+        <div class="row" style="margin-left:0px; background-color:#FFF; padding:20px 5px 0px 5px; margin:0px 0px; ">
+            <!-- Begin > Resultado Parcial -->
+            <div class="col-lg-3" style="padding-top:5px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id="chartPieDiv" style="width:90px; height:90px;"></div>
+                            </td>
+                            <td>
+                                <div class="media-body" style="display:inline-block; padding-left:5px;">
+                                    <p style="font-size:12px; font-weight:400; color:#515151; margin:0px;">
+                                        <span class="badge" style="padding:4px 5px !important; border-radius:7px !important; background-color:#d9534f;">M</span>                                     
+                                        RESULTADO TOTAL
+                                    </p>
+                                    <h4 id="resultParcial" class="media-heading" style="color:#515151 !important; font-weight:500; color:#0f1010; font-size:43px; padding: 9px 0px 0px 4px; ">0%</h4>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- End > Resultado Parcial -->
+
+            <!-- Begin > A Faturar -->
+            <div class="col-lg-9">
+                <!-- Begin > A Faturar -->
+                <div style="display:inline-block; padding-top:5px; width:275px; ">
+                    <div style="border-bottom:2px solid #eee; border-right:2px solid #eee;">
+                        <p style="font-size:12px; font-weight:400; color:#515151 !important; margin:0px; padding:0px 0px 10px 15px;">A FATURAR:&#160;&#160;<span id="aFaturarParcialPerc" style="font-size:20px"> 0%</span></p>
+                    </div>
+                    <div style="border-right:2px solid #eee;">
+                        <h4 id="aFaturarParcial" style="font-weight:400; font-size:25px; color:#515151 !important; padding: 13px 25px 13px 15px; margin-top:0px;">R$ 0,00</h4>
+                    </div>
+                </div>
+                <!-- End > A Faturar -->
+
+                <!-- Begin > Resultado Mês -->
+                <div style="display:inline-block; padding-top:5px;  width:275px; margin-left:-5px;">
+                    <div style="border-bottom:2px solid #eee; border-right:2px solid #eee;">
+                        <p style="font-size:12px; font-weight:400; color:#515151 !important; margin:0px; padding:0px 0px 10px 15px;">RESULTADO MÊS:&#160;&#160;<span id ="perAFaturarMes" style="font-size:20px"> 0%</span></p>                        
+                    </div>
+                    <div style="border-right:2px solid #eee;">
+                        <h4 id="aFaturarMes" style="font-weight:400; font-size:25px; color:#515151 !important; padding: 13px 25px 13px 15px; margin-top:0px;">R$ 0,00</h4>
+                    </div>
+                </div>
+                <!-- End >  Resultado Mês -->
+
+                <!-- Begin > Consolidado Dia -->
+                <div style="display:inline-block; padding-top:5px;  width:275px; margin-left:-5px;">
+                    <div style="border-bottom:2px solid #eee; border-right:2px solid #eee;">
+                        <p style="font-size:12px; font-weight:400; color:#515151 !important; margin:0px; padding:0px 0px 10px 15px;">CONSOLIDADO DIA:&#160;&#160;<span id="perConlDiaEqp" style="font-size:20px"> 0%</span></p>
+                    </div>
+                    <div style="border-right:2px solid #eee;">
+                        <h4 id="aConsolidDiaEqp" style="font-weight:400; font-size:25px; color:#515151 !important; padding: 13px 25px 13px 15px; margin-top:0px;">R$ 0,00</h4>
+                    </div>
+                </div>
+                <!-- End > Consolidado Dia -->
+
+            </div>
+        </div>
+        <!-- End > Resultado Parcial -->
+
+        <!-- Begin > Acompanhamento Equipes -->
+        <div class="row" style="margin-left:0px; background-color:#FFF; padding:20px 5px 0px 5px; margin:0px 0px;">
+            <table id="tbPrincipal" class="table table-hover">
+                <!-- Begin > Cabeçalho -->
+                <thead>
+                    <tr>
+                        <th style="width:15%">EQUIPE</th>
+                        <!--<th style="width:20%">SUPERVISOR</th>-->
+                        <th style="width:35%">RESULTADO X META</th>
+                        <th>R$ META</th>
+                        <th>R$ FATURAMENTOS</th>
+                    </tr>
+                </thead>
+                <!-- End > Cabeçalho -->
+
+                <!-- Begin > Body -->
+                <tbody id="tbBodyPrincipal" style="display:none;">
+                    <tr>
+                        <td>
+                            <div class="media-body" style="display:inline-block;">
+                                <h4 id="nmGerente" class="media-heading" style="font-weight:400; font-size:17px;">Loja Jardins</h4>
+                                <p id="canalGerente" style="font-size:12px; font-weight:400; color:#8899A6; margin:0px;"><i>AGDA MARIA SILVA</i></p>
+                            </div>                        
+                        </td>
+                        <td>
+                            <div class="progress" style="margin:10px 0px !important; border-radius:0px;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%; background-color:#2d9e05 !important;">
+                                    60%
+                                </div>
+                                <span class="badge" style="padding:4px 5px !important; border-radius:7px !important; background-color:#d9534f;">M</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 600.000,00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 269.879,00</p>
+                            </div>
+                        </td>
+                    </tr> 
+
+                    <tr>
+                        <td>
+                            <div class="media-body" style="display:inline-block;">
+                                <h4 id="nmGerente" class="media-heading" style="font-weight:400; font-size:17px;">Loja Amauri</h4>
+                                <p id="canalGerente" style="font-size:12px; font-weight:400; color:#8899A6; margin:0px;"><i>SHEILA JOSEFA SILVA</i></p>
+                            </div>     
+                        </td>
+                        <td>
+                            <div class="progress" style="margin:10px 0px !important; border-radius:0px;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%; background-color:#2d9e05 !important;">
+                                    35%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 600.000,00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 269.879,00</p>
+                            </div>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <div class="media-body" style="display:inline-block;">
+                                <h4 id="nmGerente" class="media-heading" style="font-weight:400; font-size:17px;">Loja Ribeirão</h4>
+                                <p id="canalGerente" style="font-size:12px; font-weight:400; color:#8899A6; margin:0px;"><i>MARCILEUDA SILVA</i></p>
+                            </div>     
+                        </td>
+                        <td>
+                            <div class="progress" style="margin:10px 0px !important; border-radius:0px;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%; background-color:#2d9e05 !important;">
+                                    80%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 600.000,00</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="margin: 6px 0px;">
+                                <p style="font-size:16px; font-weight:400; color:#8899A6; margin:0px;">R$ 269.879,00</p>
+                            </div>
+                        </td>
+                    </tr>
+                
+                </tbody>
+                <!-- End > Body -->
+            </table>
+        </div>
+        <!-- End > Acompanhamento Equipes -->
+               
+    </div>
+    <!-- End > Cabeçalho ("Evolução principal indicadores de vendas") -->
+  
+    <!-- >> Descontinuado -->    
+    <!-- Begin > Resultados por Equipe -->
+    <div class="container" style="display:none;">
+        <!-- Begin > Boxes -->
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <!-- Begin > A Faturar -->
+            <div class="span3">
+                <!-- small box -->
+                <div class="small-box sup0 tam87" style="border-left: 1px solid rgba(0,0,0,0.15) !important;">
+                    <div class="inner">
+                        <p class="margin25">RESULTADO EQUIPES</p>
+                        <h3 class="padding25" id="PerResultEquipes">0%</h3>
+                        <h5 class="resultH5" id="ValResultEquipes">R$ 0,00</h5>
+                    </div>
+                    <div class="icon padding17" style="top:0px;">
+                        <i class="fa fa-users" style="font-size:35px;"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End> A Faturar -->
+
+            <!-- Begin > Vendas Mês -->
+            <div class="span3 marginLeft20">
+                <!-- small box -->
+                <div class="small-box sup0 tam87">
+                    <div class="inner">
+                        <p class="margin25">% A FATURAR</p>
+                        <h3 class="padding25" id="PerAFaturar">0%</h3>
+                        <h5 class="resultH5" id="ValAFaturar">R$ 0,00</h5>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-alarm font50"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End > Vendas Mês -->
+            
+            <!-- Begin > Consolidado dia -->
+            <div class="span3 marginLeft20">
+                <!-- small box -->
+                <div class="small-box sup0 tam87">
+                    <div class="inner">
+                        <p class="margin25">% DEVOLUÇÕES</p>
+                        <h3 class="padding25" id="PerVendasMes">0%</h3>
+                        <h5 class="resultH5" id="ValVendasMes">R$ 0,00</h5>
+                    </div>
+                    <div class="icon padding17">
+                        <i class="ion ion-social-usd font50"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End > Consolidado dia -->
+
+            <!-- Begin > Consolidado dia -->
+            <div class="span3 marginLeft20">
+                <!-- small box -->
+                <div class="small-box sup0 tam87">
+                    <div class="inner">
+                        <p class="margin25">CONSOLIDADO DIA</p>
+                        <h3 class="padding25" id="PerConsolidadoDia">0%</h3>
+                        <h5 class="resultH5" id="ValConsolidadoDia">R$ 0,00</h5>
+                    </div>
+                    <div class="icon padding17">
+                        <i class="ion-arrow-graph-up-right icon text-success font50"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- End > Consolidado dia -->
+        </div>
+        <!-- End > Boxes -->
+    </div>
+    <!-- End > Resultados por Equipe -->
+
+    <!-- Begin > Dash -->
+    <div class="container" style="display:none;">
+        <!--Begin > Resultado Equipe -->
+        <div class="row">
+            <div class="span6" style="width:560px;">
+                <!-- Gráfico de Barras -->
+                <div class="small-box" style="margin-top:0px;">
+                    <div class="inner">
+                        <p class="margin25">META EQUIPE</p>
+                        <div id="containerBar" style="height:360px !important"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="span6 marginLeft20" style="width:560px;">
+                <!-- Gráfico Dash de Pizza -->
+                <div class="small-box" style="margin-top:0px;">
+                    <div class="inner">
+                        <p class="margin25">EQUIPES X GERENCIA</p>
+                        <div id="containerPie" style="height:200px !important"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End > Resultado Equipe -->
+
+        <!--Begin > Resultado Individual Vendedor-->
+        <div class="row">
+            <div class="span6">
+                <div class="small-box" style="margin-top:0px; width:97.4%;">
+                    <div class="inner">
+                        <p class="margin25">VENDEDOR X META</p>
+                        <div id="containerVendedores" style="height:230px;"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!--End > Resultado Individual Vendedor-->
+    </div>
+    <!-- End > Dash -->
+
+    <div class="container" style="display:none">
+        <div class="row">
+            <div class="span6">
+                <div id="containerOne" style="width:300px"></div>
+            </div>
+            <div class="span6">
+                <div id="containerTwo"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display:none">
+        <div class="row">
+            <div class="span12">
+                <div id="containerTitle">
+                    <center style="padding:30px 30px;"><span id="titleGerentes" style="font-size:18px;"></span></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display:none;">
+        <div class="row-fluid">
+            <div class="span6">
+                <div id="containerTree"></div>
+            </div>
+            <div class="span6">
+                <div id="containerFour"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="position:absolute; display:none;">
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
+    </footer>
+
+</body>
+</html>
